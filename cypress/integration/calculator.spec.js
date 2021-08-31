@@ -16,6 +16,26 @@ describe("Calculator", () => {
     cy.get('.display').should('contain', '10')
   })
 
+  it('should be able to chain multiple operations together', () => {
+    cy.get('#number5').click();
+    cy.get('#operator_add').click();
+    cy.get('#number5').click();
+    cy.get('#operator-equals').click();
+    cy.get('#operator_add').click();
+    cy.get('#number5').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '15')
+  })
+
+  it('Is the output as expected for a range of numbers', () => {
+    cy.get('#number9').click();
+    cy.get('#operator-divide').click();
+    cy.get('#number2').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '4.5')
+
+
+  })
 
 
 

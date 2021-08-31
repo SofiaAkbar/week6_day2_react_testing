@@ -17,5 +17,57 @@ describe('Calculator', () => {
     button4.simulate('click');
     expect(runningTotal.text()).toEqual('4');
   })
-})
 
+  it('should add', () => {
+    const button1 = container.find('#number1');
+    const button4 = container.find('#number4');
+    const buttonAdd = container.find('#operator_add');
+    const buttonEqual = container.find('#operator-equals');
+    button1.simulate('click');
+    buttonAdd.simulate('click');
+    button4.simulate('click');
+    buttonEqual.simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('5');
+  });
+
+  it('should subtract', () => {
+    const button7 = container.find('#number7');
+    const button4 = container.find('#number4');
+    const buttonSubtract = container.find('#operator-subtract');
+    const buttonEqual = container.find('#operator-equals');
+    button7.simulate('click');
+    buttonSubtract.simulate('click');
+    button4.simulate('click');
+    buttonEqual.simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('3');
+  });
+
+  it('should multiply', () => {
+    const button3 = container.find('#number3');
+    const button5 = container.find('#number5');
+    const buttonMultiply = container.find('#operator-multiply');
+    const buttonEqual = container.find('#operator-equals');
+    button3.simulate('click');
+    buttonMultiply.simulate('click');
+    button5.simulate('click');
+    buttonEqual.simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('15');
+  });
+
+  it('should divide', () => {
+    const button3 = container.find('#number3');
+    const button5 = container.find('#number5');
+    const buttonMultiply = container.find('#operator-multiply');
+    const buttonEqual = container.find('#operator-equals');
+    button3.simulate('click');
+    buttonMultiply.simulate('click');
+    button5.simulate('click');
+    buttonEqual.simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('15');
+  });
+
+})

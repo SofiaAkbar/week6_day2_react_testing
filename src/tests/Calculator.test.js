@@ -115,5 +115,4 @@ describe('Calculator', () => {
     expect(runningTotal.text()).toEqual('0');
   })
 
-
 })

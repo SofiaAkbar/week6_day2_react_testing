@@ -58,16 +58,18 @@ describe('Calculator', () => {
   });
 
   it('should divide', () => {
-    const button3 = container.find('#number3');
-    const button5 = container.find('#number5');
-    const buttonMultiply = container.find('#operator-multiply');
+    const button2 = container.find('#number2');
+    const button1 = container.find('#number1');
+    const button7 = container.find('#number7');
+    const buttonDivide = container.find('#operator-divide');
     const buttonEqual = container.find('#operator-equals');
-    button3.simulate('click');
-    buttonMultiply.simulate('click');
-    button5.simulate('click');
+    button2.simulate('click');
+    button1.simulate('click');
+    buttonDivide.simulate('click');
+    button7.simulate('click');
     buttonEqual.simulate('click');
     const runningTotal = container.find('#running-total');
-    expect(runningTotal.text()).toEqual('15');
+    expect(runningTotal.text()).toEqual('3');
   });
 
 })
